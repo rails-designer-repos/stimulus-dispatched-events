@@ -1,1 +1,97 @@
+<div>
+  <section>
+    <details data-controller="accordion" data-action="toggle->accordion#persist" data-accordion-id-value="a1">
+      <summary>Accordion section 1</summary>
 
+      <p>Open/close state persists via <code>localStorage</code>. Try reloading.</p>
+    </details>
+
+    <details data-controller="accordion" data-action="toggle->accordion#persist" data-accordion-id-value="a2">
+      <summary>Accordion section 2</summary>
+
+      <p>The native <code>toggle</code> event fires every time a <code>&lt;details&gt;</code> opens or closes.</p>
+    </details>
+
+    <details data-controller="accordion" data-action="toggle->accordion#persist" data-accordion-id-value="a3">
+      <summary>Accordion section 3</summary>
+
+      <p><code>data-action="toggle->accordion#persist"</code></p>
+    </details>
+  </section>
+
+  <hr>
+
+  <section>
+    <form data-controller="form" data-action="submit->form#validating:prevent">
+      <input type="text" name="name" required placeholder="Name">
+
+      <input type="email" name="email" required placeholder="Email">
+
+      <textarea name="message" required rows="3" placeholder="Message…"></textarea>
+
+      <button type="submit" data-form-target="submitButton">Submit</button>
+
+      <pre data-form-target="result" class="hidden"></pre>
+    </form>
+  </section>
+
+  <hr>
+
+  <section data-controller="modal">
+    <button data-action="click->modal#open">Open Dialog</button>
+
+    <dialog data-modal-target="dialog" data-action="close->modal#close cancel->modal#cancel">
+      <form method="dialog">
+        <p>Dismiss via <button>Close</button>, <kbd>Esc</kbd>, or backdrop click.</p>
+      </form>
+    </dialog>
+
+    <p data-modal-target="status"></p>
+  </section>
+
+  <hr>
+
+  <section>
+    <pre data-controller="clipboard" data-action="copy->clipboard#showTooltip">
+<code>$ rails g controller pages show</code>
+
+      <span data-clipboard-target="tooltip" class="clipboard-tooltip">Copied!</span>
+    </pre>
+
+    <p>Select the code above and press <kbd>Cmd+C</kbd> / <kbd>Ctrl+C</kbd>.</p>
+  </section>
+
+  <hr>
+
+  <section data-controller="range-display">
+    <input type="range" min="0" max="100" value="42" data-action="input->range-display#update">
+
+    Value: <output data-range-display-target="value">42</output>
+  </section>
+
+  <hr>
+
+  <section data-controller="character-counter">
+    <textarea maxlength="200" placeholder="Type something…" data-action="input->character-counter#update" data-character-counter-target="input"></textarea>
+
+    <p><span data-character-counter-target="remainingCharacters">200</span> / 200 characters left</p>
+  </section>
+
+  <hr>
+
+  <section data-controller="checkbox-reveal">
+    <label>
+      <input type="checkbox" data-action="change->checkbox-reveal#toggle">
+      Show extra options
+    </label>
+
+    <div data-checkbox-reveal-target="content" class="hidden">
+      <p>The <code>change</code> event on a checkbox fires when its checked state changes.</p>
+    </div>
+  </section>
+
+  <hr>
+
+  <section data-controller="visibility" data-action="visibilitychange@document->visibility#toggle">
+  </section>
+</div>
