@@ -21,4 +21,8 @@ export default class extends Controller {
     this.wasCancelled = true
     this.statusTarget.textContent = "Status: cancelled (Esc)"
   }
+
+  backdropClick(event) {
+    if (event.target === this.dialogTarget) this.dialogTarget.close()
+  }
 }

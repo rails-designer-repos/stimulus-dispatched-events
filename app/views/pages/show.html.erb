@@ -40,7 +40,7 @@
   <section data-controller="modal">
     <button data-action="click->modal#open">Open Dialog</button>
 
-    <dialog data-modal-target="dialog" data-action="close->modal#close cancel->modal#cancel">
+    <dialog data-modal-target="dialog" data-action="close->modal#close cancel->modal#cancel click->modal#backdropClick">
       <form method="dialog">
         <p>Dismiss via <button>Close</button>, <kbd>Esc</kbd>, or backdrop click.</p>
       </form>
